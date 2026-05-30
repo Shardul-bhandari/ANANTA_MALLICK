@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ananta | Digital Strategist & Marketing Creative</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #ffffff; /* bg-white */
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(209, 213, 219, 0.5);
+        }
+        .project-card:hover img {
+            transform: scale(1.05);
+        }
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: #000000;
+        }
+        /* Modal styles */
+        #modal-overlay {
+            display: none;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .marquee-container {
+            overflow: hidden;
+            user-select: none;
+            display: flex;
+            gap: 4rem;
+        }
+        .marquee-content {
+            flex-shrink: 0;
+            display: flex;
+            justify-content: space-around;
+            min-width: 100%;
+            gap: 4rem;
+        }
+        @keyframes scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-100%); }
+        }
+        .animate-marquee {
+            animation: scroll 40s linear infinite;
+        }
+    </style>
+</head>
+<body class="text-black selection:bg-black selection:text-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <span class="text-xl font-bold tracking-tight text-black">ANANTA.</span>
+            <div class="hidden md:flex gap-10 text-[11px] font-bold uppercase tracking-[0.2em] text-gray-500">
+                <a href="#work" class="hover:text-black hover:underline transition-all">Case Studies</a>
+                <a href="#gallery" class="hover:text-black hover:underline transition-all">Gallery</a>
+                <a href="#services" class="hover:text-black hover:underline transition-all">Solutions</a>
+                <a href="#process" class="hover:text-black hover:underline transition-all">Process</a>
+                <a href="#campaigns" class="hover:text-black hover:underline transition-all">Ecosystems</a>
+                <a href="#about" class="hover:text-black hover:underline transition-all">My Story</a>
+                <a href="#stack" class="hover:text-black hover:underline transition-all">Tech Stack</a>
+                <a href="#contact" class="hover:text-black hover:underline transition-all">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="relative pt-40 pb-32 md:pt-64 md:pb-48 px-6 overflow-hidden">
+        <div class="max-w-7xl mx-auto relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
+            <div class="hero-reveal text-center md:text-left max-w-3xl">
+                <span class="inline-block py-2 px-4 rounded-full bg-indigo-50 text-indigo-600 text-[10px] font-extrabold tracking-[0.2em] uppercase mb-8 border border-indigo-100">
+                    Growth & Digital Strategy
+                </span>
+                <h1 class="text-5xl md:text-8xl font-black mb-10 tracking-tight leading-[1.1] md:leading-[0.9]">
+                    Driving ROI<br />
+                    <span class="text-indigo-600">
+                        through social authority.
+                    </span>
+                </h1>
+                <p class="max-w-2xl text-xl text-slate-500 leading-relaxed mb-12">
+                    Ananta specializes in re-engineering customer acquisition funnels and scaling brand presence through data-backed performance marketing and sophisticated social ecosystems.
+                </p>
+                <div class="flex flex-col md:flex-row gap-6 justify-center md:justify-start">
+                    <a href="#work" class="px-8 py-5 bg-indigo-600 text-white text-xs font-bold uppercase tracking-widest rounded-xl hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200">Review Case Studies</a>
+                    <a href="#contact" class="px-8 py-5 border border-slate-300 text-slate-700 text-xs font-bold uppercase tracking-widest rounded-xl hover:border-slate-900 transition-all">Request Strategy Call</a>
+                </div>
+            </div>
+            <!-- Hero Visual Artifact -->
+            <div class="hidden lg:block w-[400px] relative reveal">
+                <div class="aspect-square bg-white rounded-[2.5rem] overflow-hidden border border-gray-100 shadow-2xl transition-transform hover:scale-105 duration-700">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" alt="Growth Strategy" class="w-full h-full object-cover">
+                </div>
+                <div class="absolute -bottom-6 -left-6 w-24 h-24 bg-indigo-600 rounded-2xl flex items-center justify-center text-white shadow-xl italic font-black text-2xl animate-bounce">A.</div>
+            </div>
+        </div>
+        <div class="absolute top-1/4 right-0 w-[500px] h-[500px] bg-indigo-200/20 rounded-full blur-[120px] -z-0"></div>
+    </section>
+
+    <!-- Trusted By Marquee -->
+    <section class="py-12 bg-white border-y border-slate-100 overflow-hidden">
+        <div class="max-w-7xl mx-auto mb-10 px-6">
+            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest text-center">Partnered with global disruptors</p>
+        </div>
+        <div class="marquee-container opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+            <div class="marquee-content animate-marquee">
+                <span class="text-2xl font-bold tracking-tighter text-black">CASTROL INDIA</span>
+                <span class="text-2xl font-bold tracking-tighter text-black">XBHP</span>
+                <span class="text-2xl font-bold tracking-tighter text-black">UBER INDIA</span>
+                <span class="text-2xl font-bold tracking-tighter text-black">DENTALKART</span>
+                <span class="text-2xl font-bold tracking-tighter text-black">CONVOKE</span>
+                <span class="text-2xl font-bold tracking-tighter text-black">ROYAL ENFIELD</span>
+            </div>
+            <div class="marquee-content animate-marquee" aria-hidden="true">
+                <span class="text-2xl font-bold tracking-tighter text-black">CASTROL INDIA</span>
+                <span class="text-2xl font-bold tracking-tighter text-black">XBHP</span>
+                <span class="text-2xl font-bold tracking-tighter text-black">UBER INDIA</span>
+                <span class="text-2xl font-bold tracking-tighter text-black">DENTALKART</span>
+                <span class="text-2xl font-bold tracking-tighter text-black">CONVOKE</span>
+                <span class="text-2xl font-bold tracking-tighter text-black">ROYAL ENFIELD</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Press & Features Logo Bar -->
+    <section class="py-10 bg-white border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-30 grayscale contrast-125">
+                <span class="text-sm font-bold tracking-widest">FORBES INDIA</span>
+                <span class="text-sm font-bold tracking-widest">ENTREPRENEUR</span>
+                <span class="text-sm font-bold tracking-widest">BUSINESS INSIDER</span>
+                <span class="text-sm font-bold tracking-widest">SOCIAL SAMOSA</span>
+                <span class="text-sm font-bold tracking-widest">MINT</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-32 px-6 bg-stone-50">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+            <div class="relative about-image reveal">
+                <div class="aspect-[16/10] md:aspect-[4/5] bg-white rounded-3xl overflow-hidden shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+                </div>
+                <div class="absolute -bottom-8 -right-4 md:-right-8 w-48 h-48 md:w-60 md:h-60 bg-slate-900 rounded-2xl p-8 md:p-10 text-white flex flex-col justify-end shadow-2xl">
+                    <span class="text-4xl md:text-5xl font-bold mb-2">150%</span>
+                    <span class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest leading-tight text-indigo-400">Average ROI Growth<br>for Managed Portfolios</span>
+                </div>
+            </div>
+            <div class="about-text reveal">
+                <h2 class="text-5xl font-black tracking-tight uppercase mb-8 leading-none">The Science of<br>Digital Growth.</h2>
+                <p class="text-slate-500 text-lg mb-8 leading-relaxed">
+                    In a saturated digital landscape, Ananta bridges the gap between high-level creative and conversion-centric data. We don't just "post"—we architect brand authority.
+                </p>
+                <div class="grid grid-cols-2 gap-8 mb-10">
+                    <div>
+                        <h4 class="font-bold text-slate-900 mb-2">Omnichannel Mastery</h4>
+                        <p class="text-sm text-slate-400">Synchronized scaling across Search, Social, and Email.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 mb-2">Data Integrity</h4>
+                        <p class="text-sm text-slate-400">Advanced GTM/GA4 setups for zero-leakage attribution.</p>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <span class="px-4 py-2 bg-white border border-slate-200 rounded-lg text-[10px] font-bold uppercase tracking-wider text-slate-600">PPC & Paid Social</span>
+                    <span class="px-4 py-2 bg-white border border-slate-200 rounded-lg text-[10px] font-bold uppercase tracking-wider text-slate-600">Lead Generation</span>
+                    <span class="px-4 py-2 bg-white border border-slate-200 rounded-lg text-[10px] font-bold uppercase tracking-wider text-slate-600">Market Intelligence</span>
+                    <span class="px-4 py-2 bg-white border border-slate-200 rounded-lg text-[10px] font-bold uppercase tracking-wider text-slate-600">CRM Automation</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Results Dashboard -->
+    <section id="results" class="py-24 bg-white border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+                <div class="reveal">
+                    <h3 class="text-4xl md:text-6xl font-black text-indigo-600 mb-2">$<span class="counter" data-target="12">0</span>M+</h3>
+                    <p class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Managed Ad Spend</p>
+                </div>
+                <div class="reveal">
+                    <h3 class="text-4xl md:text-6xl font-black text-indigo-600 mb-2"><span class="counter" data-target="350">0</span>%</h3>
+                    <p class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Average ROAS</p>
+                </div>
+                <div class="reveal">
+                    <h3 class="text-4xl md:text-6xl font-black text-indigo-600 mb-2"><span class="counter" data-target="1200">0</span>K+</h3>
+                    <p class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Leads Generated</p>
+                </div>
+                <div class="reveal">
+                    <h3 class="text-4xl md:text-6xl font-black text-indigo-600 mb-2"><span class="counter" data-target="45">0</span>+</h3>
+                    <p class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Brands Scaled</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section id="comparison" class="py-24 px-6 bg-slate-50 border-b border-slate-100">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-black tracking-tight uppercase mb-4">The Ananta Advantage</h2>
+                <p class="text-slate-500">Benchmark comparison of average client performance lift.</p>
+            </div>
+            <div class="overflow-hidden rounded-3xl border border-slate-200 shadow-xl bg-white reveal">
+                <table class="w-full text-left">
+                    <thead class="bg-slate-900 text-white text-[10px] font-bold uppercase tracking-widest">
+                        <tr>
+                            <th class="px-8 py-6">Metric</th>
+                            <th class="px-8 py-6">Before Ananta</th>
+                            <th class="px-8 py-6 text-indigo-400">After Ananta</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100 text-sm">
+                        <tr>
+                            <td class="px-8 py-6 font-bold">Avg. ROAS</td>
+                            <td class="px-8 py-6 text-slate-400">1.2x - 1.8x</td>
+                            <td class="px-8 py-6 font-black text-indigo-600">3.5x - 5.2x</td>
+                        </tr>
+                        <tr>
+                            <td class="px-8 py-6 font-bold">Acquisition Cost (CAC)</td>
+                            <td class="px-8 py-6 text-slate-400">$45.00</td>
+                            <td class="px-8 py-6 font-black text-indigo-600">$22.50</td>
+                        </tr>
+                        <tr>
+                            <td class="px-8 py-6 font-bold">Conversion Rate</td>
+                            <td class="px-8 py-6 text-slate-400">1.2%</td>
+                            <td class="px-8 py-6 font-black text-indigo-600">3.8%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="work" class="py-32 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-20 section-title">
+                <div class="flex justify-between items-end mb-6">
+                    <h2 class="text-5xl font-black tracking-tight uppercase leading-none">Performance Case Studies</h2>
+                    <a href="#" class="text-[10px] font-bold uppercase tracking-[0.2em] text-black hover:underline">Detailed ROI Benchmarks →</a>
+                </div>
+                <div class="h-px w-full bg-gray-100"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Project 1 -->
+                <div class="project-card group relative aspect-[16/10] overflow-hidden rounded-2xl bg-gray-100 border border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover transition-all duration-700">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-center items-center text-center p-12">
+                        <span class="text-white/70 font-bold text-[10px] tracking-[0.3em] uppercase mb-4">SaaS Scaling</span>
+                        <h3 class="text-3xl font-bold text-white mb-4">420% ROI Growth</h3>
+                        <p class="text-white/80 text-sm max-w-xs">Implementing cross-channel attribution and funnel re-engineering for a Series B fintech client.</p>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="project-card group relative aspect-[16/10] overflow-hidden rounded-2xl bg-gray-100 border border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover transition-all duration-700">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-center items-center text-center p-12">
+                        <span class="text-white/70 font-bold text-[10px] tracking-[0.3em] uppercase mb-4">Social Commerce</span>
+                        <h3 class="text-3xl font-bold text-white mb-4">310% ROAS Expansion</h3>
+                        <p class="text-white/80 text-sm max-w-xs">Developing an viral content engine that reduced CAC by 45% within 6 months.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategic Solutions -->
+    <section id="services" class="py-32 px-6 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-24">
+                <h2 class="text-5xl font-black tracking-tight uppercase mb-4">Strategic Solutions</h2>
+                <p class="text-gray-500 text-lg">Measurable results through systematic marketing excellence.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Solution 1 -->
+                <div class="service-card p-10 rounded-2xl bg-white shadow-sm border border-gray-200" onclick="openModal('Performance Marketing', 'I manage high-budget performance campaigns with a strict focus on ROAS and CPA. My methodology includes rigorous A/B testing, audience segmentation, and algorithmic optimization to ensure maximum efficiency.', 'from-black to-gray-500')">
+                    <div class="w-12 h-12 bg-black text-white rounded-lg flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Performance Marketing</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">Scalable paid media strategies designed to maximize immediate revenue and long-term ROAS.</p>
+                    <button class="text-[10px] font-bold uppercase tracking-widest text-black">View Methodology +</button>
+                </div>
+                <!-- Solution 2 -->
+                <div class="service-card p-10 rounded-2xl bg-white shadow-sm border border-gray-200" onclick="openModal('Digital Infrastructure', 'We audit and rebuild your tracking and analytics stack to ensure perfect data integrity. Without clean data, growth is guesswork. We implement GTM, GA4, and server-side tracking to capture every conversion signal.', 'from-black to-gray-500')">
+                    <div class="w-12 h-12 bg-black text-white rounded-lg flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Digital Infrastructure</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">Re-engineering acquisition funnels and analytics stacks for data integrity and high conversion.</p>
+                    <button class="text-[10px] font-bold uppercase tracking-widest text-black">View Methodology +</button>
+                </div>
+                <!-- Solution 3 -->
+                <div class="service-card p-10 rounded-2xl bg-white shadow-sm border border-gray-200" onclick="openModal('Social Authority', 'Content is the fuel for your growth engine. I build social media strategies that turn brands into industry thought leaders, leveraging organic engagement to amplify paid efforts and build lasting community equity.', 'from-black to-gray-500')">
+                    <div class="w-12 h-12 bg-black text-white rounded-lg flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" /></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Social Ecosystems</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">Architecting viral content loops and high-engagement social strategies that reduce platform dependence.</p>
+                    <button class="text-[10px] font-bold uppercase tracking-widest text-black">View Methodology +</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Process Section -->
+    <section id="process" class="py-32 px-6 bg-white border-b border-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-24 reveal">
+                <h2 class="text-5xl font-black tracking-tight uppercase mb-4">The Growth Blueprint</h2>
+                <p class="text-gray-500 text-lg">A systematic 4-step workflow from audit to market dominance.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="reveal relative p-8 rounded-2xl border border-gray-100 bg-white hover:border-black transition-all">
+                    <span class="absolute -top-4 -left-4 w-12 h-12 bg-black text-white flex items-center justify-center rounded-xl font-black text-xl italic">01</span>
+                    <h3 class="text-xl font-bold mb-4 mt-4">Audit</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Deep-dive technical audit of your current tracking, funnels, and historical performance data.</p>
+                </div>
+                <div class="reveal relative p-8 rounded-2xl border border-gray-100 bg-white hover:border-black transition-all">
+                    <span class="absolute -top-4 -left-4 w-12 h-12 bg-black text-white flex items-center justify-center rounded-xl font-black text-xl italic">02</span>
+                    <h3 class="text-xl font-bold mb-4 mt-4">Strategy</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Architecting a bespoke omnichannel growth engine tailored to your specific unit economics.</p>
+                </div>
+                <div class="reveal relative p-8 rounded-2xl border border-gray-100 bg-white hover:border-black transition-all">
+                    <span class="absolute -top-4 -left-4 w-12 h-12 bg-black text-white flex items-center justify-center rounded-xl font-black text-xl italic">03</span>
+                    <h3 class="text-xl font-bold mb-4 mt-4">Execute</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Precision deployment of creative assets and data-backed performance campaigns across key channels.</p>
+                </div>
+                <div class="reveal relative p-8 rounded-2xl border-2 border-black bg-white transition-all">
+                    <span class="absolute -top-4 -left-4 w-12 h-12 bg-black text-white flex items-center justify-center rounded-xl font-black text-xl italic">04</span>
+                    <h3 class="text-xl font-bold mb-4 mt-4 font-black text-black">Scale</h3>
+                    <p class="text-black text-sm leading-relaxed font-bold">Aggressive optimization and horizontal scaling to dominate your market niche profitably.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Proficiency -->
+    <section id="stack" class="py-32 px-6 bg-white border-y border-gray-100">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black tracking-tight uppercase mb-4">Technical Proficiency</h2>
+                <p class="text-gray-500">Platform-certified expertise in the modern marketing ecosystem.</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
+                <div class="group flex flex-col items-center justify-center p-8 rounded-2xl border border-gray-100 hover:border-black transition-all duration-500">
+                    <div class="text-xl font-black mb-2 grayscale group-hover:grayscale-0 text-black transition-all duration-500 uppercase">LSQ</div>
+                    <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400">Lead Automation</span>
+                </div>
+                <div class="group flex flex-col items-center justify-center p-8 rounded-2xl border border-gray-100 hover:border-black transition-all duration-500">
+                    <div class="text-xl font-black mb-2 grayscale group-hover:grayscale-0 text-black transition-all duration-500 uppercase">ZOHO CRM</div>
+                    <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400">Sales Ops</span>
+                </div>
+                <div class="group flex flex-col items-center justify-center p-8 rounded-2xl border border-gray-100 hover:border-black transition-all duration-500">
+                    <div class="text-xl font-black mb-2 grayscale group-hover:grayscale-0 text-black transition-all duration-500 uppercase">CRM Tools</div>
+                    <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400">Data Management</span>
+                </div>
+                <div class="group flex flex-col items-center justify-center p-8 rounded-2xl border border-gray-100 hover:border-black transition-all duration-500">
+                    <div class="text-xl font-black mb-2 grayscale group-hover:grayscale-0 text-black transition-all duration-500 uppercase">Microsoft</div>
+                    <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400">Business Suites</span>
+                </div>
+                <div class="group flex flex-col items-center justify-center p-8 rounded-2xl border border-gray-100 hover:border-black transition-all duration-500">
+                    <div class="text-xl font-black mb-2 grayscale group-hover:grayscale-0 text-black transition-all duration-500 uppercase">Adobe</div>
+                    <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400">Creative Suites</span>
+                </div>
+                <div class="group flex flex-col items-center justify-center p-8 rounded-2xl border border-gray-100 hover:border-black transition-all duration-500">
+                    <div class="text-xl font-black mb-2 grayscale group-hover:grayscale-0 text-black transition-all duration-500 uppercase">Meta</div>
+                    <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400">Ads Manager</span>
+                </div>
+                <div class="group flex flex-col items-center justify-center p-8 rounded-2xl border border-gray-100 hover:border-black transition-all duration-500">
+                    <div class="text-xl font-black mb-2 grayscale group-hover:grayscale-0 text-black transition-all duration-500 uppercase">Google</div>
+                    <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400">Search & GA4</span>
+                </div>
+                <div class="group flex flex-col items-center justify-center p-8 rounded-2xl border border-gray-100 hover:border-black transition-all duration-500">
+                    <div class="text-xl font-black mb-2 grayscale group-hover:grayscale-0 text-black transition-all duration-500 uppercase">Mailchimp</div>
+                    <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400">Retention Marketing</span>
+                </div>
+                <div class="group flex flex-col items-center justify-center p-8 rounded-2xl border border-gray-100 hover:border-black transition-all duration-500">
+                    <div class="text-xl font-black mb-2 grayscale group-hover:grayscale-0 text-black transition-all duration-500 uppercase">HubSpot</div>
+                    <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400">CRM & Flows</span>
+                </div>
+                <div class="group flex flex-col items-center justify-center p-8 rounded-2xl border border-gray-100 hover:border-black transition-all duration-500">
+                    <div class="text-xl font-black mb-2 grayscale group-hover:grayscale-0 text-black transition-all duration-500 uppercase">Shopify</div>
+                    <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400">E-Com Scaling</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof / Campaign Mockups -->
+    <section id="campaigns" class="py-32 px-6 bg-white border-b border-gray-100">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20 section-title reveal">
+                <h2 class="text-5xl font-black tracking-tight uppercase mb-4">Campaign Authority</h2>
+                <p class="text-gray-500 text-lg">Visual proof of high-engagement social ecosystems.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Mockup 1 -->
+                <div class="reveal">
+                    <div class="bg-white p-4 rounded-[2rem] shadow-xl border border-gray-100 transition-all hover:shadow-2xl hover:border-black">
+                        <div class="aspect-square bg-gray-100 rounded-[1.5rem] overflow-hidden mb-6">
+                            <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&q=80&w=800" alt="Instagram Ecosystem" class="w-full h-full object-cover">
+                        </div>
+                        <div class="px-2">
+                            <span class="text-[10px] font-bold text-black uppercase tracking-widest">Instagram Strategy</span>
+                            <h4 class="text-xl font-bold mt-2">Organic Expansion</h4>
+                            <p class="text-gray-400 text-sm mt-2">+240% Engagement Rate via dynamic storytelling loops.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Mockup 2 -->
+                <div class="reveal">
+                    <div class="bg-white p-4 rounded-[2rem] shadow-xl border border-gray-100 transition-all hover:shadow-2xl hover:border-black">
+                        <div class="aspect-square bg-gray-100 rounded-[1.5rem] overflow-hidden mb-6">
+                            <img src="https://images.unsplash.com/photo-1611944212129-29977ae1398c?auto=format&fit=crop&q=80&w=800" alt="LinkedIn B2B" class="w-full h-full object-cover">
+                        </div>
+                        <div class="px-2">
+                            <span class="text-[10px] font-bold text-black uppercase tracking-widest">LinkedIn B2B Authority</span>
+                            <h4 class="text-xl font-bold mt-2">C-Suite Lead Engine</h4>
+                            <p class="text-gray-400 text-sm mt-2">50+ Qualified C-suite leads generated monthly for Fintech SaaS.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Mockup 3 -->
+                <div class="reveal">
+                    <div class="bg-white p-4 rounded-[2rem] shadow-xl border border-gray-100 transition-all hover:shadow-2xl hover:border-black">
+                        <div class="aspect-square bg-gray-100 rounded-[1.5rem] overflow-hidden mb-6">
+                            <img src="https://images.unsplash.com/photo-1493612276216-ee3925520721?auto=format&fit=crop&q=80&w=800" alt="Content Ecosystem" class="w-full h-full object-cover">
+                        </div>
+                        <div class="px-2">
+                            <span class="text-[10px] font-bold text-black uppercase tracking-widest">Multi-Channel Branding</span>
+                            <h4 class="text-xl font-bold mt-2">Visual Narrative Playbook</h4>
+                            <p class="text-gray-400 text-sm mt-2">Unifying brand identity across touchpoints to build lasting community equity.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Creative Gallery -->
+    <section id="gallery" class="py-32 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-20 section-title reveal">
+                <div class="flex justify-between items-end mb-6">
+                    <h2 class="text-5xl font-black tracking-tight uppercase leading-none">Creative Gallery</h2>
+                    <p class="text-gray-400 text-sm hidden md:block">Visual identity & Brand artifacts</p>
+                </div>
+                <div class="h-px w-full bg-gray-100"></div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+                <div class="reveal group relative aspect-[3/4] overflow-hidden rounded-2xl bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
+                        <span class="text-[10px] font-bold text-white uppercase tracking-widest">Brand Design</span>
+                        <p class="text-white font-bold text-sm">Visual Identity System</p>
+                    </div>
+                </div>
+                <div class="reveal group relative aspect-[3/4] overflow-hidden rounded-2xl bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
+                        <span class="text-[10px] font-bold text-white uppercase tracking-widest">Social Media</span>
+                        <p class="text-white font-bold text-sm">Motion Template Library</p>
+                    </div>
+                </div>
+                <div class="reveal group relative aspect-[3/4] overflow-hidden rounded-2xl bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
+                        <span class="text-[10px] font-bold text-white uppercase tracking-widest">Typography</span>
+                        <p class="text-white font-bold text-sm">Custom Type Lockups</p>
+                    </div>
+                </div>
+                <div class="reveal group relative aspect-[3/4] overflow-hidden rounded-2xl bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1634942537034-2531766767d1?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
+                        <span class="text-[10px] font-bold text-white uppercase tracking-widest">Ad Creative</span>
+                        <p class="text-white font-bold text-sm">High-Conversion Stills</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="py-32 px-6 bg-gray-900 text-white rounded-[3rem] mx-6">
+        <div class="max-w-4xl mx-auto text-center reveal">
+            <span class="text-gray-400 text-[10px] font-bold uppercase tracking-[0.3em] mb-12 inline-block">Partner Testimonial</span>
+            <div class="relative">
+                <svg class="absolute -top-10 -left-10 w-20 h-20 text-gray-800" fill="currentColor" viewBox="0 0 32 32"><path d="M10 8v8H6v8h8V8h-4zm12 0v8h-4v8h8V8h-4z"/></svg>
+                <p class="text-3xl md:text-5xl font-medium tracking-tight italic mb-12 leading-tight">"Ananta didn't just manage our marketing; they completely re-engineered our growth engine. Our cost-per-acquisition dropped by 40% while volume increased by 3x."</p>
+                <div>
+                    <h4 class="text-xl font-bold">Marcus Chen</h4>
+                    <p class="text-gray-400 text-sm">Director of Growth, Global Tech Solutions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-40 px-6 relative overflow-hidden bg-white">
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-gray-100 rounded-full blur-[120px] -z-0"></div>
+        
+        <div class="max-w-4xl mx-auto relative z-10">
+            <div class="text-center mb-16 contact-header">
+                <h2 class="text-4xl md:text-5xl font-black tracking-tight uppercase mb-4">Let's build something</h2>
+                <p class="text-gray-500">Ready to transform your brand? Start a conversation below.</p>
+            </div>
+
+            <div class="glass-card p-8 md:p-12 rounded-3xl shadow-xl border-gray-200">
+                <form class="grid grid-cols-1 md:grid-cols-2 gap-6" onsubmit="event.preventDefault()">
+                    <div class="space-y-2">
+                        <label class="text-[10px] uppercase tracking-widest font-bold text-gray-500 ml-4">Full Name</label>
+                        <input type="text" placeholder="John Smith" class="w-full bg-white border border-gray-200 rounded-xl px-6 py-4 text-sm focus:outline-none focus:border-black transition-colors">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[10px] uppercase tracking-widest font-bold text-gray-500 ml-4">Company Email</label>
+                        <input type="email" placeholder="john@company.com" class="w-full bg-white border border-gray-200 rounded-xl px-6 py-4 text-sm focus:outline-none focus:border-black transition-colors">
+                    </div>
+                    <div class="md:col-span-2 space-y-2">
+                        <label class="text-[10px] uppercase tracking-widest font-bold text-stone-500 ml-4">Business Goals</label>
+                        <textarea rows="4" placeholder="Briefly describe your target CPA and scaling objectives..." class="w-full bg-white border border-gray-200 rounded-xl px-6 py-4 text-sm focus:outline-none focus:border-black transition-colors resize-none"></textarea>
+                    </div>
+                    <div class="md:col-span-2 mt-4">
+                        <button class="w-full py-5 rounded-xl bg-black text-white font-bold text-xs uppercase tracking-[0.2em] shadow-lg hover:bg-gray-800 transition-all interactive">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-24 px-6 border-t border-gray-100 bg-white">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
+            <div class="text-center md:text-left">
+                <span class="text-2xl font-black tracking-tighter text-black">ANANTA.</span>
+                <p class="text-gray-400 text-sm mt-4">Curated growth for market leaders.</p>
+            </div>
+            <div class="flex gap-12">
+                <div>
+                    <h5 class="text-[10px] font-bold uppercase tracking-widest text-gray-300 mb-6">Contact</h5>
+                    <p class="text-sm font-bold text-black underline underline-offset-4 decoration-gray-200">hello@ananta.com</p>
+                </div>
+                <div>
+                    <h5 class="text-[10px] font-bold uppercase tracking-widest text-gray-300 mb-6">Social</h5>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-sm font-bold text-black hover:underline transition-all">LinkedIn</a>
+                        <a href="#" class="text-sm font-bold text-black hover:underline transition-all">X</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-24 text-center border-t border-gray-50 pt-12">
+            <p class="text-gray-300 text-[10px] tracking-widest uppercase">© <span id="year"></span> Ananta Growth Partners. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="modal-overlay" class="fixed inset-0 z-[100] flex items-center justify-center p-6">
+        <div class="bg-white p-10 md:p-16 rounded-2xl max-w-3xl w-full relative shadow-3xl border border-gray-100">
+            <button onclick="closeModal()" class="absolute top-8 right-8 text-gray-400 hover:text-black transition-colors text-2xl">×</button>
+            <div id="modal-gradient" class="h-1.5 w-20 bg-black mb-10 rounded-full"></div>
+            <h2 id="modal-title" class="text-4xl font-black tracking-tight uppercase mb-8 text-black"></h2>
+            <p id="modal-desc" class="text-gray-500 text-xl leading-relaxed mb-10"></p>
+            <button onclick="closeModal()" class="px-10 py-5 rounded-xl bg-black text-white font-bold text-xs uppercase tracking-widest hover:bg-gray-800 transition-all">Close Details</button>
+        </div>
+    </div>
+
+    <!-- Floating Strategy Audit CTA -->
+    <a href="#contact" id="floating-cta" class="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[60] bg-black text-white px-8 py-5 rounded-xl shadow-2xl flex items-center gap-4 hover:bg-gray-800 transition-all duration-300 group translate-y-32 opacity-0">
+        <div class="flex flex-col items-start leading-none">
+            <span class="text-[9px] font-black uppercase tracking-[0.2em] text-gray-400 mb-1 leading-none">Let's Connect</span>
+            <span class="text-[11px] font-extrabold uppercase tracking-widest leading-none">Start a Project</span>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+        </svg>
+    </a>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        // Hero Animations
+        gsap.from(".hero-reveal > *", {
+            y: 30,
+            opacity: 0,
+            duration: 1.2,
+            stagger: 0.15,
+            ease: "expo.out",
+            delay: 0.2
+        });
+        // Section Reveals
+        document.querySelectorAll('.reveal').forEach(el => {
+            gsap.from(el, {
+                scrollTrigger: { trigger: el, start: "top 90%" },
+                y: 40,
+                opacity: 0,
+                duration: 1,
+                ease: "power2.out"
+            });
+        });
+
+        // Counter Animation Logic
+        const counterSection = document.querySelector('#results');
+        if (counterSection) {
+            ScrollTrigger.create({
+                trigger: counterSection,
+                start: "top 80%",
+                onEnter: () => {
+                    const counters = counterSection.querySelectorAll('.counter');
+                    counters.forEach(counter => {
+                        const target = +counter.getAttribute('data-target');
+                        const obj = { value: 0 };
+                        gsap.to(obj, {
+                            value: target,
+                            duration: 2,
+                            ease: "power2.out",
+                            onUpdate: () => {
+                                counter.innerText = Math.floor(obj.value);
+                            }
+                        });
+                    });
+                }
+            });
+        }
+
+        // Floating CTA Entrance Logic
+        gsap.to("#floating-cta", {
+            scrollTrigger: {
+                trigger: "body",
+                start: "top -15%",
+                toggleActions: "play none none reverse"
+            },
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "expo.out"
+        });
+
+        // Modal Logic
+        function openModal(title, desc, gradient) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-desc').innerText = desc;
+            const modal = document.getElementById('modal-overlay');
+            modal.style.display = 'flex';
+            gsap.fromTo(modal.children[0], 
+                { scale: 0.9, opacity: 0, y: 20 }, 
+                { scale: 1, opacity: 1, y: 0, duration: 0.5, ease: "expo.out" }
+            );
+        }
+        function closeModal() {
+            const modal = document.getElementById('modal-overlay');
+            gsap.to(modal.children[0], {
+                scale: 0.9,
+                opacity: 0,
+                y: 20,
+                duration: 0.3,
+                ease: "power2.in",
+                onComplete: () => {
+                    modal.style.display = 'none';
+                }
+            });
+        }
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

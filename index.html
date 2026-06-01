@@ -59,7 +59,7 @@
 <body class="text-black selection:bg-black selection:text-white">
     <!-- Navigation -->
     <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
             <span class="text-xl font-bold tracking-tight text-black">ANANTA.</span>
             <div class="hidden md:flex gap-10 text-[11px] font-bold uppercase tracking-[0.2em] text-gray-500">
                 <a href="#work" class="hover:text-black hover:underline transition-all">Case Studies</a>
@@ -71,16 +71,33 @@
                 <a href="#stack" class="hover:text-black hover:underline transition-all">Tech Stack</a>
                 <a href="#contact" class="hover:text-black hover:underline transition-all">Contact</a>
             </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-black focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 py-6 px-6">
+            <div class="flex flex-col gap-6 text-[11px] font-bold uppercase tracking-[0.2em] text-gray-500 text-center">
+                <a href="#work" class="mobile-link hover:text-black transition-all">Case Studies</a>
+                <a href="#gallery" class="mobile-link hover:text-black transition-all">Gallery</a>
+                <a href="#services" class="mobile-link hover:text-black transition-all">Solutions</a>
+                <a href="#process" class="mobile-link hover:text-black transition-all">Process</a>
+                <a href="#campaigns" class="mobile-link hover:text-black transition-all">Ecosystems</a>
+                <a href="#about" class="mobile-link hover:text-black transition-all">My Story</a>
+                <a href="#stack" class="mobile-link hover:text-black transition-all">Tech Stack</a>
+                <a href="#contact" class="mobile-link hover:text-black transition-all">Contact</a>
+            </div>
         </div>
     </nav>
     <!-- Hero Section -->
-    <section class="relative pt-40 pb-32 md:pt-64 md:pb-48 px-6 overflow-hidden">
-        <div class="max-w-7xl mx-auto relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
-            <div class="hero-reveal text-center md:text-left max-w-3xl">
+    <section class="relative pt-40 pb-32 md:pt-64 md:pb-48 px-4 sm:px-6 overflow-hidden">
+        <div class="max-w-7xl mx-auto relative z-10 flex flex-col md:flex-row items-center justify-between gap-16 md:gap-12">
+            <div class="hero-reveal text-center md:text-left max-w-3xl mx-auto md:mx-0">
                 <span class="inline-block py-2 px-4 rounded-full bg-indigo-50 text-indigo-600 text-[10px] font-extrabold tracking-[0.2em] uppercase mb-8 border border-indigo-100">
                     Growth & Digital Strategy
                 </span>
-                <h1 class="text-5xl md:text-8xl font-black mb-10 tracking-tight leading-[1.1] md:leading-[0.9]">
+                <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black mb-10 tracking-tight leading-[1.1] md:leading-[0.9]">
                     Driving ROI<br />
                     <span class="text-indigo-600">
                         through social authority.
@@ -95,8 +112,8 @@
                 </div>
             </div>
             <!-- Hero Visual Artifact -->
-            <div class="hidden lg:block w-[400px] relative reveal">
-                <div class="aspect-square bg-white rounded-[2.5rem] overflow-hidden border border-gray-100 shadow-2xl transition-transform hover:scale-105 duration-700">
+            <div class="w-full max-w-[300px] md:w-[400px] relative reveal mx-auto md:mx-0">
+                <div class="aspect-square bg-white rounded-[2rem] md:rounded-[2.5rem] overflow-hidden border border-gray-100 shadow-2xl transition-transform hover:scale-105 duration-700">
                     <img src="Picture/img12.png" alt="Growth Strategy" class="w-full h-full object-cover">
                 </div>
                 <div class="absolute -bottom-6 -left-6 w-24 h-24 bg-indigo-600 rounded-2xl flex items-center justify-center text-white shadow-xl italic font-black text-2xl animate-bounce">A.</div>
@@ -107,8 +124,8 @@
 
     <!-- Trusted By Marquee -->
     <section class="py-12 bg-white border-y border-slate-100 overflow-hidden">
-        <div class="max-w-7xl mx-auto mb-10 px-6">
-            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest text-center">Partnered with global disruptors</p>
+        <div class="max-w-7xl mx-auto mb-10 px-4 sm:px-6">
+            <p class="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-widest text-center">Partnered with global disruptors</p>
         </div>
         <div class="marquee-container opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
             <div class="marquee-content animate-marquee">
@@ -131,32 +148,32 @@
     </section>
 
     <!-- Press & Features Logo Bar -->
-    <section class="py-10 bg-white border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-30 grayscale contrast-125">
-                <span class="text-sm font-bold tracking-widest">FORBES INDIA</span>
-                <span class="text-sm font-bold tracking-widest">ENTREPRENEUR</span>
-                <span class="text-sm font-bold tracking-widest">BUSINESS INSIDER</span>
-                <span class="text-sm font-bold tracking-widest">SOCIAL SAMOSA</span>
-                <span class="text-sm font-bold tracking-widest">MINT</span>
+    <section class="py-10 bg-white border-b border-gray-100 px-4 sm:px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-2 md:flex md:flex-wrap justify-center items-center gap-8 md:gap-16 opacity-30 grayscale contrast-125 text-center">
+                <span class="text-xs md:text-sm font-bold tracking-widest">FORBES INDIA</span>
+                <span class="text-xs md:text-sm font-bold tracking-widest">ENTREPRENEUR</span>
+                <span class="text-xs md:text-sm font-bold tracking-widest">BUSINESS INSIDER</span>
+                <span class="text-xs md:text-sm font-bold tracking-widest">SOCIAL SAMOSA</span>
+                <span class="text-xs md:text-sm font-bold tracking-widest">MINT</span>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-32 px-6 bg-stone-50">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+    <section id="about" class="py-32 px-4 sm:px-6 bg-stone-50">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20 items-center">
             <div class="relative about-image reveal">
-                <div class="aspect-[16/10] md:aspect-[4/5] bg-white rounded-3xl overflow-hidden shadow-2xl">
+                <div class="aspect-square md:aspect-[4/5] w-full max-w-md mx-auto md:mx-0 bg-white rounded-3xl overflow-hidden shadow-2xl">
                     <img src="Picture/img14.png" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
                 </div>
-                <div class="absolute -bottom-8 -right-4 md:-right-8 w-48 h-48 md:w-60 md:h-60 bg-slate-900 rounded-2xl p-8 md:p-10 text-white flex flex-col justify-end shadow-2xl">
-                    <span class="text-4xl md:text-5xl font-bold mb-2">150%</span>
+                <div class="absolute -bottom-8 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:-right-8 w-44 h-44 md:w-60 md:h-60 bg-slate-900 rounded-2xl p-6 md:p-10 text-white flex flex-col justify-end shadow-2xl">
+                    <span class="text-3xl md:text-5xl font-bold mb-2">150%</span>
                     <span class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest leading-tight text-indigo-400">Average ROI Growth<br>for Managed Portfolios</span>
                 </div>
             </div>
-            <div class="about-text reveal">
-                <h2 class="text-5xl font-black tracking-tight uppercase mb-8 leading-none">The Science of<br>Digital Growth.</h2>
+            <div class="about-text reveal text-center md:text-left">
+                <h2 class="text-4xl sm:text-5xl font-black tracking-tight uppercase mb-8 leading-none">The Science of<br>Digital Growth.</h2>
                 <p class="text-slate-500 text-lg mb-8 leading-relaxed">
                     In a saturated digital landscape, Ananta bridges the gap between high-level creative and conversion-centric data. We don't just "post"—we architect brand authority.
                 </p>
@@ -181,23 +198,23 @@
     </section>
 
     <!-- Key Results Dashboard -->
-    <section id="results" class="py-24 bg-white border-b border-slate-100">
+    <section id="results" class="py-24 bg-white border-b border-slate-100 px-4 sm:px-6">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 text-center">
                 <div class="reveal">
-                    <h3 class="text-4xl md:text-6xl font-black text-indigo-600 mb-2">$<span class="counter" data-target="12">0</span>M+</h3>
+                    <h3 class="text-3xl sm:text-5xl md:text-6xl font-black text-indigo-600 mb-2">$<span class="counter" data-target="12">0</span>M+</h3>
                     <p class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Managed Ad Spend</p>
                 </div>
                 <div class="reveal">
-                    <h3 class="text-4xl md:text-6xl font-black text-indigo-600 mb-2"><span class="counter" data-target="350">0</span>%</h3>
+                    <h3 class="text-3xl sm:text-5xl md:text-6xl font-black text-indigo-600 mb-2"><span class="counter" data-target="350">0</span>%</h3>
                     <p class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Average ROAS</p>
                 </div>
                 <div class="reveal">
-                    <h3 class="text-4xl md:text-6xl font-black text-indigo-600 mb-2"><span class="counter" data-target="1200">0</span>K+</h3>
+                    <h3 class="text-3xl sm:text-5xl md:text-6xl font-black text-indigo-600 mb-2"><span class="counter" data-target="1200">0</span>K+</h3>
                     <p class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Leads Generated</p>
                 </div>
                 <div class="reveal">
-                    <h3 class="text-4xl md:text-6xl font-black text-indigo-600 mb-2"><span class="counter" data-target="45">0</span>+</h3>
+                    <h3 class="text-3xl sm:text-5xl md:text-6xl font-black text-indigo-600 mb-2"><span class="counter" data-target="45">0</span>+</h3>
                     <p class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Brands Scaled</p>
                 </div>
             </div>
@@ -205,36 +222,36 @@
     </section>
 
     <!-- Comparison Table -->
-    <section id="comparison" class="py-24 px-6 bg-slate-50 border-b border-slate-100">
+    <section id="comparison" class="py-24 px-4 sm:px-6 bg-slate-50 border-b border-slate-100">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-16 reveal">
                 <h2 class="text-4xl font-black tracking-tight uppercase mb-4">The Ananta Advantage</h2>
                 <p class="text-slate-500">Benchmark comparison of average client performance lift.</p>
             </div>
-            <div class="overflow-hidden rounded-3xl border border-slate-200 shadow-xl bg-white reveal">
+            <div class="overflow-x-auto rounded-3xl border border-slate-200 shadow-xl bg-white reveal">
                 <table class="w-full text-left">
                     <thead class="bg-slate-900 text-white text-[10px] font-bold uppercase tracking-widest">
                         <tr>
-                            <th class="px-8 py-6">Metric</th>
-                            <th class="px-8 py-6">Before Ananta</th>
-                            <th class="px-8 py-6 text-indigo-400">After Ananta</th>
+                            <th class="px-6 md:px-8 py-6">Metric</th>
+                            <th class="px-6 md:px-8 py-6">Before Ananta</th>
+                            <th class="px-6 md:px-8 py-6 text-indigo-400">After Ananta</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-slate-100 text-sm">
                         <tr>
-                            <td class="px-8 py-6 font-bold">Avg. ROAS</td>
-                            <td class="px-8 py-6 text-slate-400">1.2x - 1.8x</td>
-                            <td class="px-8 py-6 font-black text-indigo-600">3.5x - 5.2x</td>
+                            <td class="px-4 md:px-8 py-6 font-bold">Avg. ROAS</td>
+                            <td class="px-4 md:px-8 py-6 text-slate-400">1.2x - 1.8x</td>
+                            <td class="px-4 md:px-8 py-6 font-black text-indigo-600">3.5x - 5.2x</td>
                         </tr>
                         <tr>
-                            <td class="px-8 py-6 font-bold">Acquisition Cost (CAC)</td>
-                            <td class="px-8 py-6 text-slate-400">$45.00</td>
-                            <td class="px-8 py-6 font-black text-indigo-600">$22.50</td>
+                            <td class="px-4 md:px-8 py-6 font-bold">Acquisition Cost (CAC)</td>
+                            <td class="px-4 md:px-8 py-6 text-slate-400">$45.00</td>
+                            <td class="px-4 md:px-8 py-6 font-black text-indigo-600">$22.50</td>
                         </tr>
                         <tr>
-                            <td class="px-8 py-6 font-bold">Conversion Rate</td>
-                            <td class="px-8 py-6 text-slate-400">1.2%</td>
-                            <td class="px-8 py-6 font-black text-indigo-600">3.8%</td>
+                            <td class="px-4 md:px-8 py-6 font-bold">Conversion Rate</td>
+                            <td class="px-4 md:px-8 py-6 text-slate-400">1.2%</td>
+                            <td class="px-4 md:px-8 py-6 font-black text-indigo-600">3.8%</td>
                         </tr>
                     </tbody>
                 </table>
@@ -243,11 +260,11 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="work" class="py-32 px-6 bg-white">
+    <section id="work" class="py-32 px-4 sm:px-6 bg-white">
         <div class="max-w-7xl mx-auto">
             <div class="mb-20 section-title">
-                <div class="flex justify-between items-end mb-6">
-                    <h2 class="text-5xl font-black tracking-tight uppercase leading-none">Performance Case Studies</h2>
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-6 gap-4">
+                    <h2 class="text-4xl sm:text-5xl font-black tracking-tight uppercase leading-none">Performance Case Studies</h2>
                     <a href="#" class="text-[10px] font-bold uppercase tracking-[0.2em] text-black hover:underline">Detailed ROI Benchmarks →</a>
                 </div>
                 <div class="h-px w-full bg-gray-100"></div>
@@ -277,10 +294,10 @@
     </section>
 
     <!-- Strategic Solutions -->
-    <section id="services" class="py-32 px-6 bg-gray-50">
+    <section id="services" class="py-32 px-4 sm:px-6 bg-gray-50">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-24">
-                <h2 class="text-5xl font-black tracking-tight uppercase mb-4">Strategic Solutions</h2>
+                <h2 class="text-4xl sm:text-5xl font-black tracking-tight uppercase mb-4">Strategic Solutions</h2>
                 <p class="text-gray-500 text-lg">Measurable results through systematic marketing excellence.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -316,13 +333,13 @@
     </section>
 
     <!-- Service Process Section -->
-    <section id="process" class="py-32 px-6 bg-white border-b border-gray-50">
+    <section id="process" class="py-32 px-4 sm:px-6 bg-white border-b border-gray-50">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-24 reveal">
-                <h2 class="text-5xl font-black tracking-tight uppercase mb-4">The Growth Blueprint</h2>
+                <h2 class="text-4xl sm:text-5xl font-black tracking-tight uppercase mb-4">The Growth Blueprint</h2>
                 <p class="text-gray-500 text-lg">A systematic 4-step workflow from audit to market dominance.</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
                 <div class="reveal relative p-8 rounded-2xl border border-gray-100 bg-white hover:border-black transition-all">
                     <span class="absolute -top-4 -left-4 w-12 h-12 bg-black text-white flex items-center justify-center rounded-xl font-black text-xl italic">01</span>
                     <h3 class="text-xl font-bold mb-4 mt-4">Audit</h3>
@@ -348,13 +365,13 @@
     </section>
 
     <!-- Technical Proficiency -->
-    <section id="stack" class="py-32 px-6 bg-white border-y border-gray-100">
+    <section id="stack" class="py-32 px-4 sm:px-6 bg-white border-y border-gray-100">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-black tracking-tight uppercase mb-4">Technical Proficiency</h2>
                 <p class="text-gray-500">Platform-certified expertise in the modern marketing ecosystem.</p>
             </div>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
                 <div class="group flex flex-col items-center justify-center p-8 rounded-2xl border border-gray-100 hover:border-black transition-all duration-500">
                     <div class="text-xl font-black mb-2 grayscale group-hover:grayscale-0 text-black transition-all duration-500 uppercase">LSQ</div>
                     <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400">Lead Automation</span>
@@ -400,10 +417,10 @@
     </section>
 
     <!-- Social Proof / Campaign Mockups -->
-    <section id="campaigns" class="py-32 px-6 bg-white border-b border-gray-100">
+    <section id="campaigns" class="py-32 px-4 sm:px-6 bg-white border-b border-gray-100">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-20 section-title reveal">
-                <h2 class="text-5xl font-black tracking-tight uppercase mb-4">Campaign Authority</h2>
+                <h2 class="text-4xl sm:text-5xl font-black tracking-tight uppercase mb-4">Campaign Authority</h2>
                 <p class="text-gray-500 text-lg">Visual proof of high-engagement social ecosystems.</p>
             </div>
             
@@ -452,11 +469,11 @@
     </section>
 
     <!-- Creative Gallery -->
-    <section id="gallery" class="py-32 px-6 bg-white">
+    <section id="gallery" class="py-32 px-4 sm:px-6 bg-white">
         <div class="max-w-7xl mx-auto">
             <div class="mb-20 section-title reveal">
-                <div class="flex justify-between items-end mb-6">
-                    <h2 class="text-5xl font-black tracking-tight uppercase leading-none">Creative Gallery</h2>
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-6 gap-4">
+                    <h2 class="text-4xl sm:text-5xl font-black tracking-tight uppercase leading-none">Creative Gallery</h2>
                     <p class="text-gray-400 text-sm hidden md:block">Visual identity & Brand artifacts</p>
                 </div>
                 <div class="h-px w-full bg-gray-100"></div>
@@ -496,7 +513,7 @@
     </section>
 
     <!-- Testimonial -->
-    <section class="py-32 px-6 bg-gray-900 text-white rounded-[3rem] mx-6">
+    <section class="py-32 px-4 sm:px-6 bg-gray-900 text-white rounded-[3rem] mx-auto sm:mx-6">
         <div class="max-w-4xl mx-auto text-center reveal">
             <span class="text-gray-400 text-[10px] font-bold uppercase tracking-[0.3em] mb-12 inline-block">Partner Testimonial</span>
             <div class="relative">
@@ -511,7 +528,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-40 px-6 relative overflow-hidden bg-white">
+    <section id="contact" class="py-40 px-4 sm:px-6 relative overflow-hidden bg-white">
         <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-gray-100 rounded-full blur-[120px] -z-0"></div>
         
         <div class="max-w-4xl mx-auto relative z-10">
@@ -545,7 +562,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-24 px-6 border-t border-gray-100 bg-white">
+    <footer class="py-24 px-4 sm:px-6 border-t border-gray-100 bg-white">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
             <div class="text-center md:text-left">
                 <span class="text-2xl font-black tracking-tighter text-black">ANANTA.</span>
@@ -595,6 +612,17 @@
 
     <script>
         gsap.registerPlugin(ScrollTrigger);
+
+        // Mobile Menu Toggle Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
         // Hero Animations
         gsap.from(".hero-reveal > *", {
             y: 30,

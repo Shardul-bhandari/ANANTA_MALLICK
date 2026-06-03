@@ -6,6 +6,7 @@
     <title>Ananta | Digital Strategist & Marketing Creative</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
     <style>
@@ -367,50 +368,64 @@
     <!-- Technical Proficiency -->
     <section id="stack" class="py-32 px-4 sm:px-6 bg-white border-y border-gray-100">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
+            <div class="text-center mb-20 reveal">
                 <h2 class="text-4xl font-black tracking-tight uppercase mb-4">Technical Proficiency</h2>
                 <p class="text-gray-500">Platform-certified expertise in the modern marketing ecosystem.</p>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 justify-items-center">
-                <div class="group flex flex-col items-center justify-center p-8 rounded-2xl border border-gray-100 hover:border-black transition-all duration-500 w-full max-w-[240px]">
-                    <div class="text-xl font-black mb-2 grayscale group-hover:grayscale-0 text-black transition-all duration-500 uppercase">LSQ</div>
-                    <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400">Lead Automation</span>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- CRM & Sales Ops -->
+                <div class="reveal p-8 rounded-3xl border border-gray-100 bg-white hover:border-indigo-600 transition-all group">
+                    <h3 class="text-[10px] font-bold uppercase tracking-[0.3em] text-indigo-600 mb-6">CRM & Sales Ops</h3>
+                    <p class="text-sm font-bold text-slate-800 leading-relaxed">HubSpot · LSQ · Zoho CRM · Salesforce (Fundamentals)</p>
                 </div>
-                <div class="group flex flex-col items-center justify-center p-8 rounded-2xl border border-gray-100 hover:border-black transition-all duration-500 w-full max-w-[240px]">
-                    <div class="text-xl font-black mb-2 grayscale group-hover:grayscale-0 text-black transition-all duration-500 uppercase">ZOHO CRM</div>
-                    <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400">Sales Ops</span>
+                <!-- Analytics & Data -->
+                <div class="reveal p-8 rounded-3xl border border-gray-100 bg-white hover:border-indigo-600 transition-all group">
+                    <h3 class="text-[10px] font-bold uppercase tracking-[0.3em] text-indigo-600 mb-6">Analytics & Data</h3>
+                    <p class="text-sm font-bold text-slate-800 leading-relaxed">GA4 · Google Tag Manager · A/B Testing · Performance Metrics · Market Intelligence</p>
                 </div>
-                <div class="group flex flex-col items-center justify-center p-8 rounded-2xl border border-gray-100 hover:border-black transition-all duration-500 w-full max-w-[240px]">
-                    <div class="text-xl font-black mb-2 grayscale group-hover:grayscale-0 text-black transition-all duration-500 uppercase">CRM Tools</div>
-                    <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400">Data Management</span>
+                <!-- Paid & Performance -->
+                <div class="reveal p-8 rounded-3xl border border-gray-100 bg-white hover:border-indigo-600 transition-all group">
+                    <h3 class="text-[10px] font-bold uppercase tracking-[0.3em] text-indigo-600 mb-6">Paid & Performance</h3>
+                    <p class="text-sm font-bold text-slate-800 leading-relaxed">Meta Ads Manager · Google Search Ads · PPC · Funnel Optimization · Lead Gen</p>
                 </div>
-                <div class="group flex flex-col items-center justify-center p-8 rounded-2xl border border-gray-100 hover:border-black transition-all duration-500 w-full max-w-[240px]">
-                    <div class="text-xl font-black mb-2 grayscale group-hover:grayscale-0 text-black transition-all duration-500 uppercase">Microsoft</div>
-                    <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400">Business Suites</span>
+                <!-- Content & Creative -->
+                <div class="reveal p-8 rounded-3xl border border-gray-100 bg-white hover:border-indigo-600 transition-all group">
+                    <h3 class="text-[10px] font-bold uppercase tracking-[0.3em] text-indigo-600 mb-6">Content & Creative</h3>
+                    <p class="text-sm font-bold text-slate-800 leading-relaxed">Adobe Creative Suite · Canva · Pitch Decks · Marcom Assets · Video/BTS Coordination</p>
                 </div>
-                <div class="group flex flex-col items-center justify-center p-8 rounded-2xl border border-gray-100 hover:border-black transition-all duration-500 w-full max-w-[240px]">
-                    <div class="text-xl font-black mb-2 grayscale group-hover:grayscale-0 text-black transition-all duration-500 uppercase">Adobe</div>
-                    <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400">Creative Suites</span>
+                <!-- Email & Retention -->
+                <div class="reveal p-8 rounded-3xl border border-gray-100 bg-white hover:border-indigo-600 transition-all group">
+                    <h3 class="text-[10px] font-bold uppercase tracking-[0.3em] text-indigo-600 mb-6">Email & Retention</h3>
+                    <p class="text-sm font-bold text-slate-800 leading-relaxed">Mailchimp · List Growth · Drip Campaigns · Automation · Retention Flows</p>
                 </div>
-                <div class="group flex flex-col items-center justify-center p-8 rounded-2xl border border-gray-100 hover:border-black transition-all duration-500 w-full max-w-[240px]">
-                    <div class="text-xl font-black mb-2 grayscale group-hover:grayscale-0 text-black transition-all duration-500 uppercase">Meta</div>
-                    <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400">Ads Manager</span>
+                <!-- Social & Community -->
+                <div class="reveal p-8 rounded-3xl border border-gray-100 bg-white hover:border-indigo-600 transition-all group">
+                    <h3 class="text-[10px] font-bold uppercase tracking-[0.3em] text-indigo-600 mb-6">Social & Community</h3>
+                    <p class="text-sm font-bold text-slate-800 leading-relaxed">Instagram Strategy · LinkedIn B2B · Influencer Outreach · Omnichannel Planning</p>
                 </div>
-                <div class="group flex flex-col items-center justify-center p-8 rounded-2xl border border-gray-100 hover:border-black transition-all duration-500 w-full max-w-[240px]">
-                    <div class="text-xl font-black mb-2 grayscale group-hover:grayscale-0 text-black transition-all duration-500 uppercase">Google</div>
-                    <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400">Search & GA4</span>
+                <!-- Strategy & Consulting -->
+                <div class="reveal p-8 rounded-3xl border border-gray-100 bg-white hover:border-indigo-600 transition-all group md:col-span-2 lg:col-span-2">
+                    <h3 class="text-[10px] font-bold uppercase tracking-[0.3em] text-indigo-600 mb-6">Strategy & Consulting</h3>
+                    <p class="text-sm font-bold text-slate-800 leading-relaxed">GTM Strategy · Territory Management · Competitive Analysis · Intl Research · Stakeholder Engagement</p>
                 </div>
-                <div class="group flex flex-col items-center justify-center p-8 rounded-2xl border border-gray-100 hover:border-black transition-all duration-500 w-full max-w-[240px]">
-                    <div class="text-xl font-black mb-2 grayscale group-hover:grayscale-0 text-black transition-all duration-500 uppercase">Mailchimp</div>
-                    <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400">Retention Marketing</span>
+                <!-- Certifications -->
+                <div class="reveal p-8 rounded-3xl bg-slate-900 text-white shadow-2xl md:col-span-2 lg:col-span-1">
+                    <h3 class="text-[10px] font-bold uppercase tracking-[0.3em] text-indigo-400 mb-6">Certifications</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center border-b border-slate-800 pb-2">
+                            <span class="text-xs font-bold">AI Marketing</span>
+                            <span class="text-[9px] opacity-70 uppercase font-black text-indigo-400">Coursera</span>
+                        </div>
+                        <div class="flex justify-between items-center border-b border-slate-800 pb-2">
+                            <span class="text-xs font-bold">Digital Marketing</span>
+                            <span class="text-[9px] opacity-70 uppercase font-black text-indigo-400">Google</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="group flex flex-col items-center justify-center p-8 rounded-2xl border border-gray-100 hover:border-black transition-all duration-500 w-full max-w-[240px]">
-                    <div class="text-xl font-black mb-2 grayscale group-hover:grayscale-0 text-black transition-all duration-500 uppercase">HubSpot</div>
-                    <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400">CRM & Flows</span>
-                </div>
-                <div class="group flex flex-col items-center justify-center p-8 rounded-2xl border border-gray-100 hover:border-black transition-all duration-500 w-full max-w-[240px]">
-                    <div class="text-xl font-black mb-2 grayscale group-hover:grayscale-0 text-black transition-all duration-500 uppercase">Shopify</div>
-                    <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400">E-Com Scaling</span>
+                <!-- Productivity -->
+                <div class="reveal p-8 rounded-3xl bg-slate-50 border border-gray-100 md:col-span-2 lg:col-span-3">
+                    <h3 class="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400 mb-4">Productivity & Collaboration</h3>
+                    <p class="text-xs font-bold text-slate-500 leading-relaxed uppercase tracking-[0.2em]">Excel · Microsoft Office Suite · Slack · Google Workspace</p>
                 </div>
             </div>
         </div>
@@ -538,7 +553,8 @@
             </div>
 
             <div class="glass-card p-8 md:p-12 rounded-3xl shadow-xl border-gray-200">
-                <form action="https://formspree.io/ananta220010@gmail.com" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <form id="contact-form" onsubmit="sendEmail(event)" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Form fields -->
                     <div class="space-y-2">
                         <label class="text-[10px] uppercase tracking-widest font-bold text-gray-500 ml-4">Full Name</label>
                         <input type="text" name="Name" placeholder="John Smith" class="w-full bg-white border border-gray-200 rounded-xl px-6 py-4 text-sm focus:outline-none focus:border-black transition-colors" required>
@@ -557,6 +573,7 @@
                         </button>
                     </div>
                 </form>
+                <div id="form-messages" class="mt-6 text-center text-sm font-medium"></div>
             </div>
         </div>
     </section>
@@ -576,7 +593,7 @@
                 <div>
                     <h5 class="text-[10px] font-bold uppercase tracking-widest text-gray-300 mb-6">Social</h5>
                     <div class="flex gap-4">
-                        <a href="#" class="text-sm font-bold text-black hover:underline transition-all">LinkedIn</a>
+                        <a href="https://www.linkedin.com/in/ananta-mallick-235016219?utm_source=share_via&utm_content=profile&utm_medium=member_ios" class="text-sm font-bold text-black hover:underline transition-all">LinkedIn</a>
                         <a href="#" class="text-sm font-bold text-black hover:underline transition-all">X</a>
                         <a href="mailto:ananta220010@gmail.com" class="text-sm font-bold text-black hover:underline transition-all">Email</a>
                     </div>
@@ -612,6 +629,43 @@
 
     <script>
         gsap.registerPlugin(ScrollTrigger);
+
+        // Initialize EmailJS
+        (function() {
+            emailjs.init("QppJbOL5YxamOXofy"); 
+        })();
+
+        // Function to send email via EmailJS
+        function sendEmail(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const btn = form.querySelector('button[type="submit"]');
+            const formMessages = document.getElementById('form-messages');
+            
+            // UI Feedback: Loading state
+            btn.disabled = true;
+            btn.innerText = 'Sending...';
+            formMessages.innerHTML = ''; // Clear previous messages
+            formMessages.classList.remove('text-green-600', 'text-red-600');
+
+            // Use the Service ID and Template ID you just created
+            emailjs.sendForm('service_7smnlyc', 'template_7qotesa', form)
+                .then((result) => {
+                    formMessages.classList.add('text-green-600');
+                    formMessages.innerHTML = 'Message sent successfully! We will get back to you soon.';
+                    btn.innerText = 'Send Message';
+                    btn.disabled = false;
+                    form.reset(); // Clear the form fields
+                }, (error) => {
+                    console.error('EmailJS Error Details:', error);
+                    const errorMsg = error?.text || error?.message || 'Check browser console for details';
+                    formMessages.classList.add('text-red-600');
+                    formMessages.innerHTML = `Failed to send message: ${errorMsg}`;
+                    btn.innerText = 'Send Message';
+                    btn.disabled = false;
+                });
+        }
 
         // Mobile Menu Toggle Logic
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
